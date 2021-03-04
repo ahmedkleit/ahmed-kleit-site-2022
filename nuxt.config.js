@@ -16,7 +16,6 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     link: [{ rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
     link: [
-      
       {
 
                rel: 'stylesheet',
@@ -24,8 +23,7 @@ export default {
                href:
          
           'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap',
-      },
-    ,
+      }
     ],
   },
 
