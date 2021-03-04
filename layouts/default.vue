@@ -57,7 +57,7 @@ header > a:last-child {
   margin-left: 2.5rem;
 }
 
-@media(min-width: 1080px) {
+@media(min-width: 720px) {
 	section {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -88,7 +88,7 @@ header > a:last-child {
   }
 }
 
-@media(max-width: 1080px) {
+@media(max-width: 720px) {
   header > a:last-child {
     margin-right: 10px;
   }
