@@ -18,7 +18,7 @@ export default Vue.extend({
 .chip {
   background: rgba(255, 255, 255, 0.25);
   border-radius: 20px;
-  margin: 0 0.625rem;
+  margin: 0.625rem;
   padding: 0.063rem 0.625rem 0.25rem;
 }
 </style>

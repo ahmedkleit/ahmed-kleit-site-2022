@@ -6,7 +6,7 @@
         <NuxtLink to="/personal" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF', 'border-bottom': `1px solid ${fontColor === '#1C4752' ? fontColor : '#FFFFFF'}`}">personal</NuxtLink>
       </header>
 
-      <section>
+      <section :style="{ 'background': color, 'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF' }">
         <nav>
           <NuxtLink to="/" tag="button" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF'}">home</NuxtLink>
           <NuxtLink to="/work" tag="button" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF'}">work</NuxtLink>
@@ -89,8 +89,8 @@ header > a:last-child {
 }
 
 @media(max-width: 720px) {
-  header > a:last-child {
-    margin-right: 10px;
+  header, main {
+    padding: 0 10px;
   }
 
 	section {

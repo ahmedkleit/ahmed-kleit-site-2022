@@ -111,5 +111,6 @@ export default Vue.extend({
 	display: flex;
 	flex-direction: row;
 	margin-top: 3.125rem;
+	flex-flow: wrap;
 }
 </style>
