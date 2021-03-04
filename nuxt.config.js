@@ -1,7 +1,9 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
-
+  router: {
+    base: '/ahmed-kleit/',
+  },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'ahmed-kleit',
@@ -17,13 +19,11 @@ export default {
     link: [{ rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
     link: [
       {
+        rel: 'stylesheet',
 
-               rel: 'stylesheet',
-
-               href:
-         
+        href:
           'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap',
-      }
+      },
     ],
   },
 
