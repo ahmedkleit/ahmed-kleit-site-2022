@@ -1,65 +1,65 @@
 <template>
-  <div class="container">
-    <div>
-      <Logo />
-      <h1 class="title">ahmed-kleit</h1>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div class="home-container">
+      <h1>ahmed<strong>kleit</strong></h1>
+      <p>passionate about people, nature and beer</p>
+      <div class="button-group">
+        <NuxtLink to="/work" tag="button" :style="{'color': fontColor}">work</NuxtLink>
+        <NuxtLink to="/about" tag="button" :style="{'color': fontColor}">about</NuxtLink>
       </div>
-    </div>
   </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue'
+import { mapState, mapMutations } from 'vuex'
+export default Vue.extend({
+  computed: {
+    ...mapState(['fontColor'])
+  },
 
-export default Vue.extend({})
+  mounted() {
+    this.setColor('#BCF3EA');
+    this.setFontColor('#1C4752');
+  },
+
+  methods: {
+		...mapMutations(['setColor', 'setFontColor']),
+  }
+})
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
+section {
+  justify-items: center;
+}
+
+.home-container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  padding-top: 12.125rem;
+}
+
+.home-container > h1 {
+  font-size: 3.75rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+.home-container > p {
+  font-size: 2.1875rem;
   text-align: center;
 }
 
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
+.button-group {
+  margin-top: 3.75rem;
 }
 
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
+.button-group > button {
+  font-size: 3.75rem;
+  width: 12.25rem;
+  height: 5.75rem;
+  margin: 0 1.875rem;
 }
 </style>

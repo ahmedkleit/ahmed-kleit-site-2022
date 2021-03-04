@@ -14,10 +14,23 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [{ rel: 'preconnect', href: 'https://fonts.gstatic.com' }],
+    link: [
+      
+      {
+
+               rel: 'stylesheet',
+
+               href:
+         
+          'https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap',
+      },
+    ,
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['~/assets/styles/globals.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
