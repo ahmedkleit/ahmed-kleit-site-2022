@@ -35,7 +35,6 @@ export default Vue.extend({
 .container {
   max-width: 1656px;
   min-height: 100vh;
-  height: 100vh;
 	margin: 0 auto;
 
   display: flex;
@@ -58,12 +57,15 @@ header > a:last-child {
   margin-left: 2.5rem;
 }
 
+section {
+  min-height: 90vh;
+}
+
 @media(min-width: 720px) {
 	section {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 100%;
-    height: 100%;
     gap: 1rem;
     align-content: center;
   }
