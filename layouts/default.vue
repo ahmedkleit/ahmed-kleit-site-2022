@@ -34,6 +34,7 @@ export default Vue.extend({
 <style>
 .container {
   max-width: 1656px;
+  min-height: 100vh;
   height: 100vh;
 	margin: 0 auto;
 
