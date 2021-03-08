@@ -6,13 +6,13 @@
         <NuxtLink to="/personal" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF', 'border-bottom': `1px solid ${fontColor === '#1C4752' ? fontColor : '#FFFFFF'}`}">personal</NuxtLink>
       </header>
 
-      <section :style="{ 'background': color, 'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF' }">
+      <section>
         <nav>
           <NuxtLink to="/" tag="button" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF'}">home</NuxtLink>
           <NuxtLink to="/work" tag="button" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF'}">work</NuxtLink>
           <NuxtLink to="/about" tag="button" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF'}">about</NuxtLink>
         </nav>
-        
+
         <main>
           <Nuxt class="content"/>
         </main>
@@ -37,8 +37,7 @@ export default Vue.extend({
   min-height: 100vh;
 	margin: 0 auto;
 
-  display: flex;
-	flex-direction: column;
+  display: grid;
 }
 
 header {
@@ -46,6 +45,7 @@ header {
   flex-direction: row;
   justify-content: flex-end;
   margin: 1.8125rem 0;
+  grid-area: header;
 }
 
 header > a {
@@ -58,19 +58,33 @@ header > a:last-child {
 }
 
 section {
-  min-height: 90vh;
+  min-height: 88vh;
 }
 
 @media(min-width: 720px) {
-	section {
+  .container {
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+    'header'
+    'section';
+  }
+
+  section {
+    grid-area: section;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: 100%;
     gap: 1rem;
     align-content: center;
+    justify-items: stretch;
+  }
+
+  main {
+    grid-column: 2 / 12;
   }
 
   nav {
+    grid-column: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -85,29 +99,51 @@ section {
     font-size: 1.5625rem;
     transform: matrix(1, 0, 0, 1, 0, 0) rotate(-90deg) translateX(-50%);;
   }
+}
 
-  main {
-    grid-column: 2 / 12;
+@media (max-width: 1440px) {
+  header, section {
+    padding: 0 10px;
+  }
+
+  header {
+    margin: 1rem 0;
   }
 }
 
 @media(max-width: 720px) {
-  header, main {
-    padding: 0 10px;
+  .container {
+    height: 100vh;
+    min-height: auto;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas: 
+    'header'
+    'section';
   }
 
-	section {
+  section {
+    grid-area: section;
     display: grid;
     grid-template-rows: 1fr auto;
-    grid-template-columns: 100%;
-    height: 100%;
-    gap: 1rem;
+    grid-template-areas: 
+    'main'
+    'footer';
     align-content: center;
     justify-items: center;
   }
 
+  header, main {
+    padding: 0 10px;
+  }
+    
+  main {
+    grid-area: main;
+    overflow: auto;
+  }
+
   nav {
-    grid-row: 2;
+    grid-area: footer;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -119,10 +155,6 @@ section {
     width: 5.125rem;
     height: 2.5rem;
     font-size: 1.5625rem;
-  }
-
-  main {
-    grid-row: 1;
   }
 }
 </style>

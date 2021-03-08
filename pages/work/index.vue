@@ -32,10 +32,6 @@ export default Vue.extend({
 </script>
 
 <style>
-section {
-	justify-items: stretch !important;
-}
-
 .work-container {
 	display: flex;
 	flex-direction: column;

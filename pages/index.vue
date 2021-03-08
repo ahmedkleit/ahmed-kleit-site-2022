@@ -29,10 +29,6 @@ export default Vue.extend({
 </script>
 
 <style>
-section {
-  justify-items: center;
-}
-
 .home-container {
   display: flex;
   flex-direction: column;
