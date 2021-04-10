@@ -54,6 +54,7 @@ export default Vue.extend({
 
 .button-group > button {
   font-size: 3.75rem;
+  font-weight: bold;
   width: 12.25rem;
   height: 5.75rem;
   margin: 0 1.875rem;

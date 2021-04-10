@@ -69,6 +69,12 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+@media(max-width: 720px) {
+	.bmk-container {
+		padding: 0 10px;
+	}
+}
+
 .bmk-container {
 	display: flex;
 	flex-direction: column;

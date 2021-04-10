@@ -33,7 +33,7 @@ export default Vue.extend({
 
 <style>
 .container {
-  max-width: 1656px;
+  max-width: 1640px;
   min-height: 100vh;
 	margin: 0 auto;
 
@@ -59,6 +59,10 @@ header > a:last-child {
 
 section {
   min-height: 88vh;
+}
+
+.content {
+  min-height: 100%;
 }
 
 @media(min-width: 720px) {
@@ -87,25 +91,20 @@ section {
     grid-column: 1;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: flex-end;
     padding-bottom: 3.75rem;
   }
 
   nav > button {
-    margin: 1.75rem;
+    margin: 1.75rem 0;
     width: 5.125rem;
     height: 2.5rem;
     font-size: 1.5625rem;
-    transform: matrix(1, 0, 0, 1, 0, 0) rotate(-90deg) translateX(-50%);;
+    transform: matrix(1, 0, 0, 1, 0, 0) rotate(-90deg) translateX(-50%)  translatey(-50%);
   }
 }
 
 @media (max-width: 1440px) {
-  header, section {
-    padding: 0 10px;
-  }
-
   header {
     margin: 1rem 0;
   }
@@ -133,7 +132,7 @@ section {
     justify-items: center;
   }
 
-  header, main {
+  header {
     padding: 0 10px;
   }
     
