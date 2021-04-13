@@ -1,5 +1,5 @@
 <template>
-  <div :style="{ 'background': color, 'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF' }">
+  <div class="background" :style="{ 'background': color, 'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF' }">
     <div class="container">
       <header>
         <NuxtLink to="/resume" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF', 'border-bottom': `1px solid ${fontColor === '#1C4752' ? fontColor : '#FFFFFF'}`}">resume</NuxtLink>
@@ -32,6 +32,11 @@ export default Vue.extend({
 </script>
 
 <style>
+.background {
+  transition: 0.2s;
+  transition-timing-function: ease-out;
+}
+
 .container {
   max-width: 1640px;
   min-height: 100vh;
@@ -59,10 +64,6 @@ header > a:last-child {
 
 section {
   min-height: 88vh;
-}
-
-.content {
-  min-height: 100%;
 }
 
 @media(min-width: 720px) {

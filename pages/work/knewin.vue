@@ -58,7 +58,9 @@
 						<h2>SaaS</h2>
 						<h3>Do it yourself</h3>
 						<div class="product-container news">
-							<img src="~/assets/images/logo-news.svg" alt="Knewin News Logo">
+							<div>
+								<img src="~/assets/images/logo-news.svg" alt="Knewin News Logo">
+							</div>
 							<div>
 								<p>
 									Complete self-service tool for news monitoringand analysis. Assess the impact of PR actions.
@@ -68,7 +70,9 @@
 						</div>
 
 						<div  class="product-container social">
-							<img src="~/assets/images/logo-social.svg" alt="Knewin Social Logo">
+							<div>
+								<img src="~/assets/images/logo-social.svg" alt="Knewin Social Logo">
+							</div>
 							<div>
 								<p>
 									Platform to monitor and manage mentions about brands, influencers on social networks.
@@ -82,7 +86,9 @@
 						<h2>Intelligence (services)</h2>
 						<h3>Made with you</h3>
 						<div class="product-container analytics">
-							<img src="~/assets/images/logo-analytics.svg" alt="Knewin Analytics Logo">
+							<div>
+								<img src="~/assets/images/logo-analytics.svg" alt="Knewin Analytics Logo">
+							</div>
 							<div>
 								<p>
 									Interface for your company to monitor the information of all customers with easy integration.
@@ -96,7 +102,9 @@
 						<h2>Enterprise (services)</h2>
 						<h3>We do it for you</h3>
 						<div class="product-container product-enterprise">
-							<img src="~/assets/images/logo-news.svg" alt="Knewin Enterprise Logo">
+							<div>
+								<img src="~/assets/images/logo-news.svg" alt="Knewin Enterprise Logo">
+							</div>
 							<div>
 								<p>
 									Interface for your company to monitor the information of all customers with easy integration
@@ -106,7 +114,9 @@
 						</div>
 
 						<div  class="product-container monitoring">
-							<img src="~/assets/images/logo-monitoring.svg" alt="Knewin Monitoring Logo">
+							<div>
+								<img src="~/assets/images/logo-monitoring.svg" alt="Knewin Monitoring Logo">
+							</div>
 							<div>
 								<p>
 									Service that merge Knewin technology with the customize delivery by specialized team.
@@ -120,7 +130,9 @@
 						<h2>R&D</h2>
 						<h3> New product</h3>
 						<div class="product-container colab">
-							<img src="~/assets/images/logo-colab.svg" alt="Knewin Colab Logo">
+							<div>
+								<img src="~/assets/images/logo-colab.svg" alt="Knewin Colab Logo">
+							</div>
 							<div>
 								<p>
 									Service that merge Knewin technology with the customize delivery by specialized team.
@@ -160,6 +172,7 @@ export default Vue.extend({
 @media(max-width: 720px) {
 	.knewin-container {
 		padding: 0 10px;
+		min-height: calc(100vh - 6.8125rem) !important;
 	}
 
 	.wrapper .details {
@@ -170,6 +183,8 @@ export default Vue.extend({
 .knewin-container {
 	display: flex;
 	flex-direction: column;
+	min-height: 100%;
+  justify-content: space-around;
 }
 
 .knewin-container > article {
@@ -230,7 +245,7 @@ export default Vue.extend({
 
 .details {
 	max-width: 1656px;
-	margin: 3.125rem auto;
+	margin: 0 auto;
 	display: grid;
 	justify-content: start;
 	align-items: center;
@@ -287,19 +302,25 @@ export default Vue.extend({
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	justify-content: space-between;
 
 	width: 100%;
 	min-height: 19.313rem;
 }
 
 .product-container img {
-	border-radius: 10px 10px 0 0;
-	width: 100%;
-	height: 6.188rem;
+	height: 1.563rem;
 }
 
-.product-container div {
+.product-container div:first-child {
+	height: 6.188rem;
+	border-radius: 10px 10px 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+.product-container div:last-child {
 	display: flex;
   flex-direction: column;
 
@@ -307,7 +328,6 @@ export default Vue.extend({
 	border-radius: 0 0 10px 10px;
 	width: 100%;
 	min-height: 13.125rem;
-	height: 100%;
 	padding: 1.25rem;
 	font-size: 1.563rem;
 	color: #1C4752;
@@ -327,18 +347,16 @@ export default Vue.extend({
 	grid-area: news;
 }
 
-.news img {
+.news div:first-child {
 	background: #F8AB82 0% 0% no-repeat padding-box;
-	padding: 2.313rem 6.063rem;
 }
 
 .saas > .social {
 	grid-area: social;
 }
 
-.social img {
+.social div:first-child {
 	background: #1370F6 0% 0% no-repeat padding-box;
-	padding: 2.313rem 5.75rem;
 }
 
 .intelligence {
@@ -357,9 +375,8 @@ export default Vue.extend({
 	grid-area: analytics;
 }
 
-.analytics img {
+.analytics div:first-child {
 	background: #698A92 0% 0% no-repeat padding-box;
-	padding: 2.313rem 4.313rem;
 }
 
 .enterprise {
@@ -378,18 +395,16 @@ export default Vue.extend({
 	grid-area: enterprise;
 }
 
-.product-enterprise img {
+.product-enterprise div:first-child {
 	background: #293343 0% 0% no-repeat padding-box;
-	padding: 2.313rem 3.688rem;
 }
 
 .enterprise > .monitoring {
 	grid-area: monitoring;
 }
 
-.monitoring img {
+.monitoring div:first-child {
 	background: #5E92BC 0% 0% no-repeat padding-box;
-	padding: 2.313rem 3.313rem;
 }
 
 .rd {
@@ -408,9 +423,8 @@ export default Vue.extend({
 	grid-area: colab;
 }
 
-.colab img {
+.colab div:first-child {
 	background: #5A5EA6 0% 0% no-repeat padding-box;
-	padding: 2.313rem 5.938rem;
 }
 
 .arrow-down {
@@ -418,8 +432,7 @@ export default Vue.extend({
 	width: 60px;
 	height: 60px;
 	align-self: center;
-	bottom: -15px;
-	margin-bottom: 15px;
+	bottom: 0px;
 }
 
 @media(min-width: 1024px) {
@@ -459,9 +472,9 @@ export default Vue.extend({
 	}
 }
 
-@media (max-height: 600px) {
-	.arrow-down {
-		display: none;
+@media (min-height: 1366px) {
+	.knewin-container {
+		min-height: calc(100vh - 2.5625rem);
 	}
 }
 </style>
