@@ -40,7 +40,7 @@
 		</div>
 
 		<div class="video">
-			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" allowfullscreen></iframe>
 		</div>
 
 		<div class="chips-container">
@@ -173,17 +173,20 @@ export default Vue.extend({
 }
 
 .video {
-	grid-area: video;
-	padding-bottom: 56.25%;
 	position: relative;
+  width: 100%;
+	height: 0;
+  padding-bottom: 56.25%;
+	margin-top: 1.25rem;
 }
 
 iframe {
 	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
 } 
 
 .chefs-wrapper > .chips-container {
