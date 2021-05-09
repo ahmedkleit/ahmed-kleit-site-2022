@@ -81,9 +81,20 @@ export default Vue.extend({
 	.chefs-container {
 		padding: 0 10px;
 	}
+
+	.chefs-wrapper {
+	display: grid;
+	grid-template-areas: 
+		'title'
+		'article'
+		'chips'
+		'video';
+  gap: 1rem;
+}
 }
 
-.chefs-wrapper {
+@media(min-width: 720px) {
+	.chefs-wrapper {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr auto;
@@ -92,6 +103,7 @@ export default Vue.extend({
 		'article video'
 		'chips chips';
   gap: 1rem;
+}
 }
 
 .chefs-container {
