@@ -1,45 +1,46 @@
 <template>
 	<div class="chefs-wrapper" :style="{'color': fontColor}">
-		<div class="chefs-container">
 			<h1>
 				101 Chefs
 			</h1>
-			<h2>
-				A Market place platform to connect cooks to neighbours looking for homemade food.
-			</h2>
-			<h2>
-				Co-Creator | Product & Design
-			</h2>
+		<div class="chefs-container">
+			<article>
+				<h2>
+					A Market place platform to connect cooks to neighbours looking for homemade food.
+				</h2>
+				<h2>
+					Co-Creator | Product & Design
+				</h2>
 
-			<p>
-				April 2016 | Dez 2017
-			</p>
-
-			<p>
-				In 2015, Brazil start facing finance and political crisis, to brazilian, one of the first solution to make extra money, its to sell homemade cook every where, corner of the street, bus, train stations and deliveries.
-			</p>
-
-			<p>
-				101 Chefs was born to empower this community and support them on the most difficult step of the business, recurring customers and revenues.
-			</p>
-
-			<section>
 				<p>
-					101 Chef was created by Baobbá, an « open business » company. One of the most amazing work experience.
+					April 2016 | Dez 2017
 				</p>
 
-				<a href="">
-					<svg class="heart-icon" style="width:1.438rem;height:1.25rem" viewBox="0 0 24 24">
-							<path fill="#EF0000" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
-					</svg>
-					Click to Know about Baobbá
-				</a>
-			</section>
+				<p>
+					In 2015, Brazil start facing finance and political crisis, to brazilian, one of the first solution to make extra money, its to sell homemade cook every where, corner of the street, bus, train stations and deliveries.
+				</p>
 
+				<p>
+					101 Chefs was born to empower this community and support them on the most difficult step of the business, recurring customers and revenues.
+				</p>
+
+				<section>
+					<p>
+						101 Chef was created by Baobbá, an « open business » company. One of the most amazing work experience.
+					</p>
+
+					<a href="">
+						<svg class="heart-icon" style="width:1.438rem;height:1.25rem" viewBox="0 0 24 24">
+								<path fill="#EF0000" d="M12,21.35L10.55,20.03C5.4,15.36 2,12.27 2,8.5C2,5.41 4.42,3 7.5,3C9.24,3 10.91,3.81 12,5.08C13.09,3.81 14.76,3 16.5,3C19.58,3 22,5.41 22,8.5C22,12.27 18.6,15.36 13.45,20.03L12,21.35Z" />
+						</svg>
+						Click to Know about Baobbá
+					</a>
+				</section>
+			</article>
 		</div>
 
 		<div class="video">
-			<iframe width="100%" height="460px" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="100%" height="100%" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 
 		<div class="chips-container">
@@ -61,7 +62,7 @@ export default Vue.extend({
 	},
 
 	created() {
-		this.changeColor('#033756', '#FE9F6A');
+		this.changeColor('#560332', '#FFFFFF');
 	},
 
 	methods: {
@@ -87,6 +88,7 @@ export default Vue.extend({
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 1fr auto;
 	grid-template-areas: 
+		'title title'
 		'article video'
 		'chips chips';
   gap: 1rem;
@@ -95,30 +97,34 @@ export default Vue.extend({
 .chefs-container {
 	display: flex;
 	flex-direction: column;
+}
+
+.chefs-wrapper > h1 {
+	font-size: 5rem;
+	font-weight: bold;
+	grid-area: title;
+}
+
+.chefs-container > article {
 	grid-area: article;
 }
 
-.chefs-container > h1 {
-	font-size: 5rem;
-	font-weight: bold;
-}
-
-.chefs-container > h2 {
+.chefs-container > article > h2 {
 	font-size: 2.188rem;
 	font-weight: bold;
 	margin-bottom: 1.25rem;
 }
 
-.chefs-container > h2:nth-child(2) {
+.chefs-container > article > h2:nth-child(1) {
 	margin-top: 1.25rem;
 }
 
-.chefs-container > h2:nth-child(3) {
+.chefs-container > article > h2:nth-child(2) {
 	font-weight: normal;
 	margin-top: 1.875rem;
 }
 
-.chefs-container> h3 {
+.chefs-container > article > h3 {
 	font-size: 1.563rem;
 	font-weight: bold;
 	margin-top: 2.5rem;
@@ -130,7 +136,7 @@ export default Vue.extend({
 	margin: 15px 0;
 }
 
-.chefs-container > section {
+.chefs-container > article > section {
 	display: flex;
 	flex-direction: column;
 	border: 2px solid #B24181;
@@ -141,11 +147,11 @@ export default Vue.extend({
 	width: 100%;
 }
 
-.chefs-container > section > p {
+.chefs-container > article > section > p {
 	font-weight: bold;
 }
 
-.chefs-container > section > a {
+.chefs-container > article > section > a {
 	font-size: 1.125rem;
 	text-decoration: underline;
 }
@@ -156,7 +162,17 @@ export default Vue.extend({
 
 .video {
 	grid-area: video;
+	padding-bottom: 56.25%;
+	position: relative;
 }
+
+iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+} 
 
 .chefs-wrapper > .chips-container {
 	display: flex;

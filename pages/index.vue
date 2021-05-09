@@ -59,4 +59,10 @@ export default Vue.extend({
   height: 5.75rem;
   margin: 0 1.875rem;
 }
+
+@media (min-width: 720px) {
+.home-container {
+  width: calc(100% - 9.09%);
+}
+}
 </style>

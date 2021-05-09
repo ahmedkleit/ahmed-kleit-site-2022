@@ -477,4 +477,10 @@ export default Vue.extend({
 		min-height: calc(100vh - 2.5625rem);
 	}
 }
+
+@media (min-width: 720px) {
+.knewin-container {
+  width: calc(100% - 9.09%);
+}
+}
 </style>

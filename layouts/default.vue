@@ -85,7 +85,7 @@ section {
   }
 
   main {
-    grid-column: 2 / 12;
+    grid-column: 2 / 13;
   }
 
   nav {

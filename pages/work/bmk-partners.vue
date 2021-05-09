@@ -75,6 +75,12 @@ export default Vue.extend({
 	}
 }
 
+@media (min-width: 720px) {
+.bmk-container {
+  width: calc(100% - 9.09%);
+}
+}
+
 .bmk-container {
 	display: flex;
 	flex-direction: column;
