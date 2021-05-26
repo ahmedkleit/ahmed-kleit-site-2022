@@ -51,3 +51,19 @@ a {
 	color: inherit;
 	cursor: pointer;
 }
+
+.carousel-arrows {
+	background: none !important;
+}
+
+.carousel-previous-arrow {
+	left: -2rem !important;
+}
+
+.carousel-next-arrow {
+	right: -2rem !important;
+}
+
+.splide__arrow svg {
+	fill: #FFF;
+}

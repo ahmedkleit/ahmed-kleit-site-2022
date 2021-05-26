@@ -1,11 +1,15 @@
 <template>
   <div class="home-container">
-      <h1>ahmed<strong>kleit</strong></h1>
-      <p>passionate about people, nature and beer</p>
-      <div class="button-group">
-        <NuxtLink to="/work" tag="button" :style="{'color': fontColor}">work</NuxtLink>
-        <NuxtLink to="/about" tag="button" :style="{'color': fontColor}">about</NuxtLink>
-      </div>
+    <h1>ahmed<strong>kleit</strong></h1>
+    <p>passionate about people, nature and beer</p>
+    <div class="button-group">
+      <NuxtLink to="/work" tag="button" :style="{ color: fontColor }"
+        >work</NuxtLink
+      >
+      <NuxtLink to="/about" tag="button" :style="{ color: fontColor }"
+        >about</NuxtLink
+      >
+    </div>
   </div>
 </template>
 
@@ -14,17 +18,17 @@ import Vue from 'vue'
 import { mapState, mapMutations } from 'vuex'
 export default Vue.extend({
   computed: {
-    ...mapState(['fontColor'])
+    ...mapState(['fontColor']),
   },
 
   mounted() {
-    this.setColor('#BCF3EA');
-    this.setFontColor('#1C4752');
+    this.setColor('#BCF3EA')
+    this.setFontColor('#1C4752')
   },
 
   methods: {
-		...mapMutations(['setColor', 'setFontColor']),
-  }
+    ...mapMutations(['setColor', 'setFontColor']),
+  },
 })
 </script>
 
@@ -61,8 +65,8 @@ export default Vue.extend({
 }
 
 @media (min-width: 720px) {
-.home-container {
-  width: calc(100% - 9.09%);
-}
+  .home-container {
+    width: calc(100% - 9.09%);
+  }
 }
 </style>

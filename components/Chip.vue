@@ -1,5 +1,5 @@
 <template>
-  <div class="chip" :style="{'color': fontColor}">
+  <div class="chip" :style="{ color: fontColor }">
     <slot></slot>
   </div>
 </template>
@@ -8,9 +8,9 @@
 import Vue from 'vue'
 import { mapState } from 'vuex'
 export default Vue.extend({
-   computed: {
-    ...mapState(['fontColor'])
-  }
+  computed: {
+    ...mapState(['fontColor']),
+  },
 })
 </script>
 

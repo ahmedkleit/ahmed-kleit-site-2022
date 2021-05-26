@@ -1,20 +1,59 @@
 <template>
-  <div class="background" :style="{ 'background': color, 'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF' }">
+  <div
+    class="background"
+    :style="{
+      background: color,
+      color: fontColor === '#1C4752' ? fontColor : '#FFFFFF',
+    }"
+  >
     <div class="container">
       <header>
-        <NuxtLink to="/resume" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF', 'border-bottom': `1px solid ${fontColor === '#1C4752' ? fontColor : '#FFFFFF'}`}">resume</NuxtLink>
-        <NuxtLink to="/personal" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF', 'border-bottom': `1px solid ${fontColor === '#1C4752' ? fontColor : '#FFFFFF'}`}">personal</NuxtLink>
+        <NuxtLink
+          to="/resume"
+          :style="{
+            color: fontColor === '#1C4752' ? fontColor : '#FFFFFF',
+            'border-bottom': `1px solid ${
+              fontColor === '#1C4752' ? fontColor : '#FFFFFF'
+            }`,
+          }"
+          >resume</NuxtLink
+        >
+        <NuxtLink
+          to="/personal"
+          :style="{
+            color: fontColor === '#1C4752' ? fontColor : '#FFFFFF',
+            'border-bottom': `1px solid ${
+              fontColor === '#1C4752' ? fontColor : '#FFFFFF'
+            }`,
+          }"
+          >personal</NuxtLink
+        >
       </header>
 
       <section>
         <nav>
-          <NuxtLink to="/" tag="button" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF'}">home</NuxtLink>
-          <NuxtLink to="/work" tag="button" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF'}">work</NuxtLink>
-          <NuxtLink to="/about" tag="button" :style="{'color': fontColor === '#1C4752' ? fontColor : '#FFFFFF'}">about</NuxtLink>
+          <NuxtLink
+            to="/"
+            tag="button"
+            :style="{ color: fontColor === '#1C4752' ? fontColor : '#FFFFFF' }"
+            >home</NuxtLink
+          >
+          <NuxtLink
+            to="/work"
+            tag="button"
+            :style="{ color: fontColor === '#1C4752' ? fontColor : '#FFFFFF' }"
+            >work</NuxtLink
+          >
+          <NuxtLink
+            to="/about"
+            tag="button"
+            :style="{ color: fontColor === '#1C4752' ? fontColor : '#FFFFFF' }"
+            >about</NuxtLink
+          >
         </nav>
 
         <main>
-          <Nuxt class="content"/>
+          <Nuxt class="content" />
         </main>
       </section>
     </div>
@@ -23,11 +62,11 @@
 
 <script lang="ts">
 import Vue from 'vue'
-import {mapState} from 'vuex'
+import { mapState } from 'vuex'
 export default Vue.extend({
   computed: {
-    ...mapState(['color', 'fontColor'])
-  }
+    ...mapState(['color', 'fontColor']),
+  },
 })
 </script>
 
@@ -40,7 +79,7 @@ export default Vue.extend({
 .container {
   max-width: 1640px;
   min-height: 100vh;
-	margin: 0 auto;
+  margin: 0 auto;
 
   display: grid;
 }
@@ -55,7 +94,7 @@ header {
 
 header > a {
   font-size: 1.5625rem;
-  color: #1C4752;
+  color: #1c4752;
 }
 
 header > a:last-child {
@@ -66,12 +105,12 @@ section {
   min-height: 88vh;
 }
 
-@media(min-width: 720px) {
+@media (min-width: 720px) {
   .container {
     grid-template-rows: auto 1fr;
-    grid-template-areas: 
-    'header'
-    'section';
+    grid-template-areas:
+      'header'
+      'section';
   }
 
   section {
@@ -101,7 +140,8 @@ section {
     width: 5.125rem;
     height: 2.5rem;
     font-size: 1.5625rem;
-    transform: matrix(1, 0, 0, 1, 0, 0) rotate(-90deg) translateX(-50%)  translatey(-50%);
+    transform: matrix(1, 0, 0, 1, 0, 0) rotate(-90deg) translateX(-50%)
+      translatey(-50%);
   }
 }
 
@@ -111,24 +151,24 @@ section {
   }
 }
 
-@media(max-width: 720px) {
+@media (max-width: 720px) {
   .container {
     height: 100vh;
     min-height: auto;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
-    grid-template-areas: 
-    'header'
-    'section';
+    grid-template-areas:
+      'header'
+      'section';
   }
 
   section {
     grid-area: section;
     display: grid;
     grid-template-rows: 1fr auto;
-    grid-template-areas: 
-    'main'
-    'footer';
+    grid-template-areas:
+      'main'
+      'footer';
     align-content: center;
     justify-items: center;
   }
@@ -136,7 +176,7 @@ section {
   header {
     padding: 0 10px;
   }
-    
+
   main {
     grid-area: main;
     overflow: auto;
