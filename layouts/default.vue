@@ -61,6 +61,7 @@ export default Vue.extend({
 .background {
   transition: 0.2s;
   transition-timing-function: ease-out;
+  padding: 0 1rem;
 }
 
 .container {

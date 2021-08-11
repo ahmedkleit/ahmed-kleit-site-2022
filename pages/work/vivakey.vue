@@ -112,7 +112,7 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style>
 @media (max-width: 720px) {
   .psa-container {
     padding: 0 10px;

@@ -216,7 +216,7 @@ export default Vue.extend({
 })
 </script>
 
-<style scoped>
+<style>
 @media (max-width: 720px) {
   .knewin-container {
     padding: 0 10px;
@@ -287,7 +287,7 @@ li {
   position: absolute;
   color: #1c4752;
   background: #ffffff;
-  top: 100vh;
+  top: auto;
   left: 0;
   right: 0;
 }
