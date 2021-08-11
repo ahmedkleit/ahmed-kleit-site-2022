@@ -3,7 +3,7 @@
     class="background"
     :style="{
       background: color,
-      color: fontColor === '#1C4752' ? fontColor : '#FFFFFF',
+      color: fontColor,
     }"
   >
     <div class="container">
@@ -11,20 +11,16 @@
         <NuxtLink
           to="/resume"
           :style="{
-            color: fontColor === '#1C4752' ? fontColor : '#FFFFFF',
-            'border-bottom': `1px solid ${
-              fontColor === '#1C4752' ? fontColor : '#FFFFFF'
-            }`,
+            color: buttonColor,
+            'border-bottom': `1px solid ${buttonColor}`,
           }"
           >resume</NuxtLink
         >
         <NuxtLink
           to="/personal"
           :style="{
-            color: fontColor === '#1C4752' ? fontColor : '#FFFFFF',
-            'border-bottom': `1px solid ${
-              fontColor === '#1C4752' ? fontColor : '#FFFFFF'
-            }`,
+            color: buttonColor,
+            'border-bottom': `1px solid ${buttonColor}`,
           }"
           >personal</NuxtLink
         >
@@ -32,22 +28,13 @@
 
       <section>
         <nav>
-          <NuxtLink
-            to="/"
-            tag="button"
-            :style="{ color: fontColor === '#1C4752' ? fontColor : '#FFFFFF' }"
+          <NuxtLink to="/" tag="button" :style="{ color: buttonColor }"
             >home</NuxtLink
           >
-          <NuxtLink
-            to="/work"
-            tag="button"
-            :style="{ color: fontColor === '#1C4752' ? fontColor : '#FFFFFF' }"
+          <NuxtLink to="/work" tag="button" :style="{ color: buttonColor }"
             >work</NuxtLink
           >
-          <NuxtLink
-            to="/about"
-            tag="button"
-            :style="{ color: fontColor === '#1C4752' ? fontColor : '#FFFFFF' }"
+          <NuxtLink to="/about" tag="button" :style="{ color: buttonColor }"
             >about</NuxtLink
           >
         </nav>
@@ -65,7 +52,7 @@ import Vue from 'vue'
 import { mapState } from 'vuex'
 export default Vue.extend({
   computed: {
-    ...mapState(['color', 'fontColor']),
+    ...mapState(['color', 'fontColor', 'buttonColor']),
   },
 })
 </script>
@@ -101,7 +88,7 @@ header > a:last-child {
   margin-left: 2.5rem;
 }
 
-section {
+.container > section {
   min-height: 88vh;
 }
 
@@ -113,7 +100,7 @@ section {
       'section';
   }
 
-  section {
+  .container > section {
     grid-area: section;
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -128,6 +115,8 @@ section {
   }
 
   nav {
+    position: absolute;
+    bottom: 1%;
     grid-column: 1;
     display: flex;
     flex-direction: column;
@@ -162,7 +151,7 @@ section {
       'section';
   }
 
-  section {
+  .container > section {
     grid-area: section;
     display: grid;
     grid-template-rows: 1fr auto;

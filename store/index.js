@@ -1,6 +1,7 @@
 export const state = () => ({
-  color: '#BCF3EA',
-  fontColor: '#1C4752',
+  color: '#313545',
+  fontColor: '#E66464',
+  buttonColor: '#F7D8D9',
 })
 
 export const mutations = {
@@ -10,5 +11,9 @@ export const mutations = {
 
   setFontColor(state, fontColor) {
     state.fontColor = fontColor
+  },
+
+  setButtonColor(state, buttonColor) {
+    state.buttonColor = buttonColor
   },
 }

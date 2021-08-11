@@ -197,21 +197,26 @@ export default Vue.extend({
   },
 
   created() {
-    this.changeColor('#126FF4', '#FFFFFF')
+    this.changeColor('#126FF4', '#FFFFFF', '#FFFFFF')
   },
 
   methods: {
-    ...mapMutations(['setColor', 'setFontColor']),
+    ...mapMutations(['setColor', 'setFontColor', 'setButtonColor']),
 
-    changeColor(backgroundColor: string, fontColor: string) {
+    changeColor(
+      backgroundColor: string,
+      fontColor: string,
+      buttonColor: string
+    ) {
       this.setColor(backgroundColor)
       this.setFontColor(fontColor)
+      this.setButtonColor(buttonColor)
     },
   },
 })
 </script>
 
-<style>
+<style scoped>
 @media (max-width: 720px) {
   .knewin-container {
     padding: 0 10px;

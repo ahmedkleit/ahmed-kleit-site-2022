@@ -1,42 +1,54 @@
 <template>
   <div class="work-container">
-    <p :style="{ color: fontColor }">i'm doing</p>
+    <p :style="{ color: buttonColor }">i'm doing</p>
+    <NuxtLink
+      to="/agrivalle"
+      tag="a"
+      :style="{ color: fontColor }"
+      @mouseover.native="changeColor('#313545', '#F7D8D9', '#E66464')"
+      >Agrivalle</NuxtLink
+    >
+
+    <p :style="{ color: buttonColor }">i have done</p>
     <NuxtLink
       to="/work/bmk-partners"
       tag="a"
       :style="{ color: fontColor }"
-      @mouseover.native="changeColor('#033756', '#FE9F6A')"
+      @mouseover.native="changeColor('#033756', '#FE9F6A', '#FFFFFF')"
       >BMK Partners</NuxtLink
     >
 
-    <p :style="{ color: fontColor }">i have done</p>
     <NuxtLink
       to="/work/knewin"
       tag="a"
       :style="{ color: fontColor }"
-      @mouseover.native="changeColor('#126FF4', '#FFFFFF')"
+      @mouseover.native="changeColor('#126FF4', '#FFFFFF', '#FFFFFF')"
       >Knewin</NuxtLink
     >
     <NuxtLink
       to="/work/101chefs-baobba"
       tag="a"
       :style="{ color: fontColor }"
-      @mouseover.native="changeColor('#560332', '#FFFFFF')"
+      @mouseover.native="changeColor('#560332', '#FFFFFF', '#FFFFFF')"
       >101 Chefs /Baobba</NuxtLink
     >
-    <NuxtLink to="/work/vivakey" tag="a" :style="{ color: fontColor }"
+    <NuxtLink
+      to="/work/vivakey"
+      tag="a"
+      :style="{ color: fontColor }"
+      @mouseover.native="changeColor('#163651', '#84CCE5', '#FFFFFF')"
       >Vivakey</NuxtLink
     >
     <NuxtLink
       to="/work/psa"
       tag="a"
       :style="{ color: fontColor }"
-      @mouseover.native="changeColor('#1E2337', '#FD4239')"
+      @mouseover.native="changeColor('#1E2337', '#FD4239', '#FFFFFF')"
       >PSA</NuxtLink
     >
-    <NuxtLink to="/work/archives" tag="a" :style="{ color: fontColor }"
+    <!-- <NuxtLink to="/work/archives" tag="a" :style="{ color: fontColor }"
       >Archives</NuxtLink
-    >
+    > -->
   </div>
 </template>
 
@@ -45,15 +57,20 @@ import Vue from 'vue'
 import { mapState, mapMutations } from 'vuex'
 export default Vue.extend({
   computed: {
-    ...mapState(['fontColor']),
+    ...mapState(['fontColor', 'buttonColor']),
   },
 
   methods: {
-    ...mapMutations(['setColor', 'setFontColor']),
+    ...mapMutations(['setColor', 'setFontColor', 'setButtonColor']),
 
-    changeColor(backgroundColor: string, fontColor: string) {
+    changeColor(
+      backgroundColor: string,
+      fontColor: string,
+      buttonColor: string
+    ) {
       this.setColor(backgroundColor)
       this.setFontColor(fontColor)
+      this.setButtonColor(buttonColor)
     },
   },
 })
@@ -83,7 +100,7 @@ export default Vue.extend({
 }
 
 .work-container > a {
-  font-size: 5rem;
+  font-size: 4rem;
   font-weight: bold;
   margin: 10px 0;
 }

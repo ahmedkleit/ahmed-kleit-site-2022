@@ -1,6 +1,6 @@
 <template>
   <div class="psa-wrapper" :style="{ color: fontColor }">
-    <h1>Groupe PSA</h1>
+    <h1>Vivakey</h1>
     <div class="psa-container">
       <article>
         <h2>
@@ -89,7 +89,7 @@ export default Vue.extend({
   },
 
   created() {
-    this.changeColor('#1E2337', '#FD4239', '#FFFFFF')
+    this.changeColor('#163651', '#84CCE5', '#FFFFFF')
   },
 
   methods: {

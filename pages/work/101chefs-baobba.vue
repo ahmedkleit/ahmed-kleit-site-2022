@@ -73,15 +73,20 @@ export default Vue.extend({
   },
 
   created() {
-    this.changeColor('#560332', '#FFFFFF')
+    this.changeColor('#560332', '#FFFFFF', '#FFFFFF')
   },
 
   methods: {
-    ...mapMutations(['setColor', 'setFontColor']),
+    ...mapMutations(['setColor', 'setFontColor', 'setButtonColor']),
 
-    changeColor(backgroundColor: string, fontColor: string) {
+    changeColor(
+      backgroundColor: string,
+      fontColor: string,
+      buttonColor: string
+    ) {
       this.setColor(backgroundColor)
       this.setFontColor(fontColor)
+      this.setButtonColor(buttonColor)
     },
   },
 })

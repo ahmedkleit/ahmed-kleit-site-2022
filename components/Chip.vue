@@ -14,7 +14,7 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style scoped>
 .chip {
   background: rgba(255, 255, 255, 0.25);
   border-radius: 20px;

@@ -30,7 +30,7 @@
 }
 
 body, textarea, button {
-	font: 400 1rem "Lato", sans-serif;
+	font: 400 1rem "Open Sans", sans-serif;
 }
 
 button {
@@ -42,7 +42,7 @@ button {
 }
 
 button:hover {
-	background: rgb(28, 71, 82, 0.05);
+	background: rgb(247, 216, 217, 0.05);
   border-radius: 5px;
 }
 

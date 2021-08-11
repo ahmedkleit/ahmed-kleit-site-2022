@@ -1,12 +1,14 @@
 <template>
   <div class="home-container">
-    <h1>ahmed<strong>kleit</strong></h1>
-    <p>passionate about people, nature and beer</p>
+    <h1 :style="{ color: fontColor }">ahmedkleit</h1>
+    <p :style="{ color: fontColor }">
+      passionate about people, nature and beer
+    </p>
     <div class="button-group">
-      <NuxtLink to="/work" tag="button" :style="{ color: fontColor }"
+      <NuxtLink to="/work" tag="button" :style="{ color: buttonColor }"
         >work</NuxtLink
       >
-      <NuxtLink to="/about" tag="button" :style="{ color: fontColor }"
+      <NuxtLink to="/about" tag="button" :style="{ color: buttonColor }"
         >about</NuxtLink
       >
     </div>
@@ -18,16 +20,17 @@ import Vue from 'vue'
 import { mapState, mapMutations } from 'vuex'
 export default Vue.extend({
   computed: {
-    ...mapState(['fontColor']),
+    ...mapState(['fontColor', 'buttonColor']),
   },
 
   mounted() {
-    this.setColor('#BCF3EA')
-    this.setFontColor('#1C4752')
+    this.setColor('#313545')
+    this.setFontColor('#E66464')
+    this.setButtonColor('#F7D8D9')
   },
 
   methods: {
-    ...mapMutations(['setColor', 'setFontColor']),
+    ...mapMutations(['setColor', 'setFontColor', 'setButtonColor']),
   },
 })
 </script>
@@ -43,12 +46,13 @@ export default Vue.extend({
 
 .home-container > h1 {
   font-size: 3.75rem;
-  font-weight: 400;
+  font-weight: 800;
   margin-bottom: 30px;
 }
 
 .home-container > p {
   font-size: 2.1875rem;
+  font-weight: 700;
   text-align: center;
 }
 
