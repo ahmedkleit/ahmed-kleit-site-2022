@@ -27,7 +27,7 @@
       </header>
 
       <section>
-        <nav>
+        <nav :style="[{ backgroundColor: color }]">
           <NuxtLink to="/" tag="button" :style="{ color: buttonColor }"
             >home</NuxtLink
           >
@@ -93,6 +93,10 @@ header > a:last-child {
   min-height: 88vh;
 }
 
+nav {
+  z-index: 2;
+}
+
 @media (min-width: 720px) {
   .container {
     grid-template-rows: auto 1fr;
@@ -116,13 +120,14 @@ header > a:last-child {
   }
 
   nav {
-    position: absolute;
+    position: fixed;
     bottom: 1%;
     grid-column: 1;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding-bottom: 3.75rem;
+    background-color: unset !important;
   }
 
   nav > button {
@@ -170,6 +175,7 @@ header > a:last-child {
   main {
     grid-area: main;
     overflow: auto;
+    padding-bottom: 7rem;
   }
 
   nav {
@@ -178,6 +184,11 @@ header > a:last-child {
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    position: absolute;
+    bottom: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
   }
 
   nav > button {

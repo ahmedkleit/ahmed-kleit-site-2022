@@ -231,7 +231,7 @@ export default Vue.extend({
 .knewin-container {
   display: flex;
   flex-direction: column;
-  min-height: 100%;
+  min-height: 100vh;
   justify-content: space-around;
 }
 
@@ -511,19 +511,13 @@ li {
       'rd .';
   }
 
-  section > div {
+  .wrapper section > div {
     margin-bottom: 5rem;
   }
 
   .wrapper {
     position: inherit;
     width: 100vw;
-  }
-}
-
-@media (min-height: 1366px) {
-  .knewin-container {
-    min-height: calc(100vh - 2.5625rem);
   }
 }
 
