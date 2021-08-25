@@ -41,7 +41,11 @@ export default Vue.extend({
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 12.125rem;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
 }
 
 .home-container > h1 {
@@ -66,11 +70,5 @@ export default Vue.extend({
   width: 12.25rem;
   height: 5.75rem;
   margin: 0 1.875rem;
-}
-
-@media (min-width: 720px) {
-  .home-container {
-    width: calc(100% - 9.09%);
-  }
 }
 </style>

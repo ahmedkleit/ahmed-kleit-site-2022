@@ -226,12 +226,17 @@ export default Vue.extend({
   .wrapper .details {
     padding: 0 10px;
   }
+
+  .arrow-down {
+    position: sticky !important;
+    bottom: 4rem !important;
+  }
 }
 
 .knewin-container {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  min-height: 100%;
   justify-content: space-around;
 }
 
@@ -287,7 +292,7 @@ li {
   position: absolute;
   color: #1c4752;
   background: #ffffff;
-  top: auto;
+  top: 100vh;
   left: 0;
   right: 0;
 }
@@ -297,7 +302,7 @@ li {
   margin: 0 auto;
   display: grid;
   justify-content: start;
-  align-items: center;
+  align-items: start;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: auto 1fr 1fr;
   gap: 1rem;
@@ -354,6 +359,7 @@ li {
 
   width: 100%;
   min-height: 19.313rem;
+  justify-content: space-between;
 }
 
 .product-container img {
@@ -376,7 +382,7 @@ li {
   background: #f5f5f5;
   border-radius: 0 0 10px 10px;
   width: 100%;
-  min-height: 13.125rem;
+  height: 100%;
   padding: 1.25rem;
   font-size: 1.563rem;
   color: #1c4752;
@@ -477,11 +483,12 @@ li {
 }
 
 .arrow-down {
-  position: sticky;
+  position: absolute;
   width: 60px;
   height: 60px;
   align-self: center;
   bottom: 0px;
+  z-index: 3;
 }
 
 @media (min-width: 1024px) {
@@ -525,5 +532,15 @@ li {
   .knewin-container {
     width: calc(100% - 9.09%);
   }
+}
+
+@media (min-height: 1366px) {
+  .knewin-container {
+    min-height: calc(100vh - 2.5625rem);
+  }
+}
+
+.details div {
+  align-items: stretch;
 }
 </style>

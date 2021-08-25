@@ -27,16 +27,16 @@
       </header>
 
       <section>
-        <nav :style="[{ backgroundColor: color }]">
-          <NuxtLink to="/" tag="button" :style="{ color: buttonColor }"
-            >home</NuxtLink
-          >
-          <NuxtLink to="/work" tag="button" :style="{ color: buttonColor }"
-            >work</NuxtLink
-          >
-          <NuxtLink to="/about" tag="button" :style="{ color: buttonColor }"
-            >about</NuxtLink
-          >
+        <nav :style="{ backgroundColor: color }">
+          <NuxtLink to="/" tag="button" :style="{ color: buttonColor }">
+            <p>home</p>
+          </NuxtLink>
+          <NuxtLink to="/work" tag="button" :style="{ color: buttonColor }">
+            <p>work</p>
+          </NuxtLink>
+          <NuxtLink to="/about" tag="button" :style="{ color: buttonColor }">
+            <p>about</p>
+          </NuxtLink>
         </nav>
 
         <main>
@@ -126,17 +126,23 @@ nav {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    padding-bottom: 3.75rem;
-    background-color: unset !important;
+    /* padding-bottom: 3.75rem; */
+    border-radius: 10px;
+    padding: 1rem;
   }
 
   nav > button {
-    margin: 1.75rem 0;
-    width: 5.125rem;
-    height: 2.5rem;
+    margin: 1.25rem 0;
+    height: 5.125rem;
+    width: 2.5rem;
     font-size: 1.5625rem;
-    transform: matrix(1, 0, 0, 1, 0, 0) rotate(-90deg) translateX(-50%)
-      translatey(-50%);
+    /* transform: matrix(1, 0, 0, 1, 0, 0) rotate(-90deg) translateX(-50%)
+      translatey(-50%); */
+  }
+
+  nav > button > p {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
   }
 }
 
@@ -175,7 +181,6 @@ nav {
   main {
     grid-area: main;
     overflow: auto;
-    padding-bottom: 7rem;
   }
 
   nav {
@@ -184,9 +189,9 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    bottom: 0;
+    position: fixed;
     margin: 0 auto;
+    bottom: 0;
     left: 0;
     right: 0;
   }

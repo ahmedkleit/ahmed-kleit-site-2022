@@ -92,7 +92,7 @@ export default Vue.extend({
 })
 </script>
 
-<style>
+<style scoped>
 @media (max-width: 720px) {
   .chefs-container {
     padding: 0 10px;
