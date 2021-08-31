@@ -187,11 +187,7 @@
                 Service that merge Knewin technology with the customize delivery
                 by specialized team.
               </p>
-              <a
-                href="https://www.knewin.com/produto/knewin-monitoring/"
-                target="_blank"
-                >more details</a
-              >
+              <div></div>
             </div>
           </div>
         </div>
