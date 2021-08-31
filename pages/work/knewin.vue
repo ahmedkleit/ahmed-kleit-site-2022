@@ -2,7 +2,14 @@
   <div>
     <div class="knewin-container">
       <article>
-        <h1>Knewin</h1>
+        <a href="https://www.knewin.com/" target="_blank"
+          >Knewin
+          <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
+            <path
+              fill="currentColor"
+              d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
+            /></svg
+        ></a>
         <h2>
           Knewin is a technology company whose purpose is to make information
           useful and accessible to its customers.
@@ -56,9 +63,9 @@
       <section class="details">
         <h1>Product suites</h1>
 
+        <h2 class="saas-title">SaaS</h2>
+        <h3 class="saas-subtitle">Do it yourself</h3>
         <div class="saas">
-          <h2>SaaS</h2>
-          <h3>Do it yourself</h3>
           <div class="product-container news">
             <div>
               <img src="~/assets/images/logo-news.svg" alt="Knewin News Logo" />
@@ -97,9 +104,9 @@
           </div>
         </div>
 
+        <h2 class="intelligence-title">Intelligence (services)</h2>
+        <h3 class="intelligence-subtitle">Made with you</h3>
         <div class="intelligence">
-          <h2>Intelligence (services)</h2>
-          <h3>Made with you</h3>
           <div class="product-container analytics">
             <div>
               <img
@@ -121,9 +128,9 @@
           </div>
         </div>
 
+        <h2 class="enterprise-title">Enterprise (services)</h2>
+        <h3 class="enterprise-subtitle">We do it for you</h3>
         <div class="enterprise">
-          <h2>Enterprise (services)</h2>
-          <h3>We do it for you</h3>
           <div class="product-container product-enterprise">
             <div>
               <img
@@ -165,9 +172,9 @@
           </div>
         </div>
 
+        <h2 class="rd-title">R&D</h2>
+        <h3 class="rd-subtitle">New product</h3>
         <div class="rd">
-          <h2>R&D</h2>
-          <h3>New product</h3>
           <div class="product-container colab">
             <div>
               <img
@@ -180,6 +187,11 @@
                 Service that merge Knewin technology with the customize delivery
                 by specialized team.
               </p>
+              <a
+                href="https://www.knewin.com/produto/knewin-monitoring/"
+                target="_blank"
+                >more details</a
+              >
             </div>
           </div>
         </div>
@@ -245,7 +257,8 @@ export default Vue.extend({
   flex-direction: column;
 }
 
-.knewin-container > article > h1 {
+.knewin-container > article > a {
+  width: fit-content;
   font-size: 5rem;
   font-weight: bold;
 }
@@ -304,11 +317,15 @@ li {
   justify-content: start;
   align-items: start;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: auto 1fr 1fr;
+  grid-template-rows: auto repeat(2, auto auto 1fr);
   gap: 1rem;
   grid-template-areas:
     '. title title title title title title title title title title title'
+    '. saas-title saas-title saas-title saas-title saas-title saas-title . intelligence-title intelligence-title intelligence-title .'
+    '. saas-subtitle saas-subtitle saas-subtitle saas-subtitle saas-subtitle saas-subtitle . intelligence-subtitle intelligence-subtitle intelligence-subtitle .'
     '. saas saas saas saas saas saas . intelligence intelligence intelligence .'
+    '. enterprise-title enterprise-title enterprise-title enterprise-title enterprise-title enterprise-title . rd-title rd-title rd-title .'
+    '. enterprise-subtitle enterprise-subtitle enterprise-subtitle enterprise-subtitle enterprise-subtitle enterprise-subtitle . rd-subtitle rd-subtitle rd-subtitle .'
     '. enterprise enterprise enterprise enterprise enterprise enterprise . rd rd rd .';
 }
 
@@ -328,16 +345,13 @@ li {
 .details h2 {
   font-size: 2.188rem;
   font-weight: bold;
-  grid-area: suite-title;
+  margin-bottom: -1.5rem;
 }
 
 .details h3 {
   font-size: 2.188rem;
   font-weight: normal;
   font-style: italic;
-  grid-area: suite-subtitle;
-
-  margin-bottom: 1.875rem;
 }
 
 .saas {
@@ -346,10 +360,15 @@ li {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto 1fr;
   grid-column-gap: 1rem;
-  grid-template-areas:
-    'suite-title suite-title'
-    'suite-subtitle suite-subtitle'
-    'news social';
+  grid-template-areas: 'news social';
+}
+
+.saas-title {
+  grid-area: saas-title;
+}
+
+.saas-subtitle {
+  grid-area: saas-subtitle;
 }
 
 .product-container {
@@ -378,6 +397,7 @@ li {
 .product-container div:last-child {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 
   background: #f5f5f5;
   border-radius: 0 0 10px 10px;
@@ -395,7 +415,6 @@ li {
 .product-container a {
   align-self: flex-end;
   border-bottom: #1c4752 1px solid;
-  margin-top: 3.125rem;
 }
 
 .saas > .news {
@@ -420,10 +439,15 @@ li {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr;
   grid-column-gap: 1rem;
-  grid-template-areas:
-    'suite-title'
-    'suite-subtitle'
-    'analytics';
+  grid-template-areas: 'analytics';
+}
+
+.intelligence-title {
+  grid-area: intelligence-title;
+}
+
+.intelligence-subtitle {
+  grid-area: intelligence-subtitle;
 }
 
 .intelligence > .analytics {
@@ -440,10 +464,15 @@ li {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto 1fr;
   grid-column-gap: 1rem;
-  grid-template-areas:
-    'suite-title suite-title'
-    'suite-subtitle suite-subtitle'
-    'enterprise monitoring';
+  grid-template-areas: 'enterprise monitoring';
+}
+
+.enterprise-title {
+  grid-area: enterprise-title;
+}
+
+.enterprise-subtitle {
+  grid-area: enterprise-subtitle;
 }
 
 .enterprise > .product-enterprise {
@@ -468,10 +497,15 @@ li {
   grid-template-columns: 1fr;
   grid-template-rows: auto auto 1fr;
   grid-column-gap: 1rem;
-  grid-template-areas:
-    'suite-title'
-    'suite-subtitle'
-    'colab';
+  grid-template-areas: 'colab';
+}
+
+.rd-title {
+  grid-area: rd-title;
+}
+
+.rd-subtitle {
+  grid-area: rd-subtitle;
 }
 
 .rd > .colab {
@@ -492,14 +526,14 @@ li {
 }
 
 @media (min-width: 1024px) {
-  .details {
+  /* .details {
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
       '. title title title title title title title title title title title'
       '. saas saas saas saas saas saas . intelligence intelligence intelligence .'
       '. enterprise enterprise enterprise enterprise enterprise enterprise . rd rd rd .';
-  }
+  } */
 
   section > div {
     margin-bottom: 10rem;
@@ -509,12 +543,20 @@ li {
 @media (max-width: 720px) {
   .details {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto repeat(4, 1fr);
+    grid-template-rows: auto repeat(4, auto auto 1fr);
     grid-template-areas:
       'title title'
+      'saas-title saas-title'
+      'saas-subtitle saas-subtitle'
       'saas saas'
+      'intelligence-title .'
+      'intelligence-subtitle .'
       'intelligence .'
+      'enterprise-title enterprise-title'
+      'enterprise-subtitle enterprise-subtitle'
       'enterprise enterprise'
+      'rd-title .'
+      'rd-subtitle .'
       'rd .';
   }
 
