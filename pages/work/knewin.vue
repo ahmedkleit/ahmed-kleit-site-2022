@@ -134,7 +134,7 @@
           <div class="product-container product-enterprise">
             <div>
               <img
-                src="~/assets/images/logo-news.svg"
+                src="~/assets/images/logo_enterprise.png"
                 alt="Knewin Enterprise Logo"
               />
             </div>
@@ -237,7 +237,7 @@ export default Vue.extend({
 
   .arrow-down {
     position: sticky !important;
-    bottom: 4rem !important;
+    bottom: 5rem !important;
   }
 }
 
