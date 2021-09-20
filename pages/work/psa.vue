@@ -40,27 +40,34 @@
     </div>
 
     <div class="wrapper-carousel">
-      <splide
-        :options="splideOptions"
-        class="carousel"
-        @splide:active="showSubtitle"
-      >
-        <splide-slide>
-          <img src="~/assets/images/image01.jpg" />
-          <p v-if="carouselIndex == 0">Legenda 1</p>
-        </splide-slide>
-        <splide-slide>
-          <img
-            height="90%"
-            src="https://media.giphy.com/media/PSKAppO2LH56w/giphy.gif"
-          />
-          <p v-if="carouselIndex == 1">Legenda 2</p>
-        </splide-slide>
-        <splide-slide>
-          <img src="~/assets/images/image03.jpg" />
-          <p v-if="carouselIndex == 2">Legenda 3</p>
-        </splide-slide>
-      </splide>
+      <Tabs>
+        <Tab title="Citroën">
+          <splide
+            :options="splideOptions"
+            class="carousel"
+            @splide:active="showSubtitle"
+          >
+            <splide-slide>
+              <img src="~/assets/images/image01.jpg" />
+              <p v-if="carouselIndex == 0">Legenda 1</p>
+            </splide-slide>
+            <splide-slide>
+              <img
+                height="90%"
+                src="https://media.giphy.com/media/PSKAppO2LH56w/giphy.gif"
+              />
+              <p v-if="carouselIndex == 1">Legenda 2</p>
+            </splide-slide>
+            <splide-slide>
+              <img src="~/assets/images/image03.jpg" />
+              <p v-if="carouselIndex == 2">Legenda 3</p>
+            </splide-slide>
+          </splide>
+        </Tab>
+        <Tab title="DS">
+          <div></div>
+        </Tab>
+      </Tabs>
     </div>
   </div>
 </template>
@@ -139,7 +146,7 @@ export default Vue.extend({
 @media (min-width: 720px) {
   .psa-wrapper {
     display: grid;
-    grid-template-columns: 1fr fit-content(50%);
+    grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr auto;
     grid-template-areas:
       'title title'
