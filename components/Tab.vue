@@ -24,7 +24,6 @@ export default {
   },
   methods: {
     setActive(activeTabName: string) {
-      console.log(this.title, activeTabName)
       this.isActive = this.title === activeTabName
     },
   },
