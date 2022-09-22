@@ -37,13 +37,13 @@ button {
 	cursor: pointer;
 	background: none;
 	border: none;
-  transition: 0.3s;
-  transition-timing-function: ease-out;
+  	transition: 0.3s;
+  	transition-timing-function: ease-out;
 }
 
 button:hover {
 	background: rgb(247, 216, 217, 0.05);
-  border-radius: 5px;
+  	border-radius: 5px;
 }
 
 a {

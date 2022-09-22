@@ -235,6 +235,7 @@ export default Vue.extend({
   grid-area: media;
   overflow: hidden;
   text-align: -webkit-center;
+  text-align: -moz-center;
   max-width: 100%;
 }
 

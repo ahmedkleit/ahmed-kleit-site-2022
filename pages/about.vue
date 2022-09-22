@@ -30,7 +30,7 @@
         <a href="" :style="{ color: buttonColor }">@gmail</a>
       </section>
 
-      <img src="~/assets/images/arredi.png" alt="" />
+      <img src="~/assets/images/ahmed.png" alt="" />
 
       <section class="experience-and-education">
         <section>

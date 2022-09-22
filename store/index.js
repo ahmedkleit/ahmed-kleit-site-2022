@@ -1,6 +1,6 @@
 export const state = () => ({
-  color: '#313545',
-  fontColor: '#E66464',
+  color: '#2F2735',
+  fontColor: '#FF6464',
   buttonColor: '#F7D8D9',
 })
 

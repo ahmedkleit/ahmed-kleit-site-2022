@@ -8,21 +8,23 @@
   >
     <div class="container">
       <header>
-        <NuxtLink
-          to="/resume"
+        <a
+          href="/Resume Ahmed Kleit 2022.pdf"
+          target="_blank"
           :style="{
             color: buttonColor,
             'border-bottom': `1px solid ${buttonColor}`,
           }"
-          >resume</NuxtLink
+          >resume</a
         >
-        <NuxtLink
-          to="/personal"
+        <a
+          href="https://www.instagram.com/ahmedkleit/"
+          target="_blank"
           :style="{
             color: buttonColor,
             'border-bottom': `1px solid ${buttonColor}`,
           }"
-          >personal</NuxtLink
+          >instagram</a
         >
       </header>
 
@@ -83,6 +85,7 @@ header {
 header > a {
   font-size: 1.5625rem;
   color: #1c4752;
+  z-index: 100;
 }
 
 header > a:last-child {

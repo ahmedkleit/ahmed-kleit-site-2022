@@ -80,7 +80,7 @@ export default Vue.extend({
   },
 
   created() {
-    this.changeColor('#560332', '#FFFFFF', '#FFFFFF')
+    this.changeColor('#560332', '#FAD7D7', '#FFFFFF')
   },
 
   methods: {

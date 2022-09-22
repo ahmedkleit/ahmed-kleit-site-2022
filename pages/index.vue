@@ -24,8 +24,8 @@ export default Vue.extend({
   },
 
   mounted() {
-    this.setColor('#313545')
-    this.setFontColor('#E66464')
+    this.setColor('#2F2735')
+    this.setFontColor('#FF6464')
     this.setButtonColor('#F7D8D9')
   },
 
