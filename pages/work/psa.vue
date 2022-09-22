@@ -1,6 +1,6 @@
 <template>
   <div class="psa-wrapper" :style="{ color: fontColor }">
-    <a href="" target="_blank"
+    <a href="https://www.stellantis.com/en" target="_blank"
       >Groupe PSA
       <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
         <path
@@ -48,19 +48,25 @@
             @splide:active="showSubtitle"
           >
             <splide-slide>
-              <img src="~/assets/images/image01.jpg" />
-              <p v-if="carouselIndex == 0">Legenda 1</p>
+              <img src="~/assets/images/01MEDIA PLAY.png" />
             </splide-slide>
             <splide-slide>
-              <img
-                height="90%"
-                src="https://media.giphy.com/media/PSKAppO2LH56w/giphy.gif"
-              />
-              <p v-if="carouselIndex == 1">Legenda 2</p>
+              <img src="~/assets/images/02MEDIA LISTE.png" />
             </splide-slide>
             <splide-slide>
-              <img src="~/assets/images/image03.jpg" />
-              <p v-if="carouselIndex == 2">Legenda 3</p>
+              <img src="~/assets/images/03AUX.png" />
+            </splide-slide>
+            <splide-slide>
+              <img src="~/assets/images/04CLIM.png" />
+            </splide-slide>
+            <splide-slide>
+              <video width="100%" height="100%" controls>
+                <source
+                  src="~/assets/videos/PROPS_AHMED_3.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
             </splide-slide>
           </splide>
         </Tab>
@@ -85,10 +91,11 @@ export default Vue.extend({
           right: '5rem',
           left: '5rem',
         },
+        drag: 'free',
+        snap: 'true',
         gap: '1rem',
-        height: '550px',
+        height: 'auto',
         width: '90%',
-        autoWidth: true,
         focus: 'center',
         classes: {
           arrow: 'splide__arrow carousel-arrows',

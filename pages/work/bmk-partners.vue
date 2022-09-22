@@ -1,7 +1,7 @@
 <template>
   <div :style="{ color: fontColor }">
     <div class="bmk-container">
-      <a href="" target="_blank"
+      <a href="https://www.mmk.partners/" target="_blank"
         >BMK Partners
         <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
           <path

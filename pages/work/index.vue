@@ -1,12 +1,13 @@
 <template>
   <div class="work-container">
     <p :style="{ color: fontColor }">i'm doing</p>
-    <NuxtLink
-      to="/agrivalle"
+    <a
+      href="https://www.agrivalle.com.br/"
+      target="_blank"
       tag="a"
       :style="{ color: buttonColor }"
       @mouseover.native="changeColor('#2F2735', '#FF6464', '#F7D8D9')"
-      >Agrivalle</NuxtLink
+      >Agrivalle</a
     >
 
     <p :style="{ color: fontColor }">i have done</p>

@@ -1,6 +1,6 @@
 <template>
   <div class="chefs-wrapper" :style="{ color: fontColor }">
-    <a href="" target="_blank"
+    <a href="http://www.101chefs.com.br/" target="_blank"
       >101 Chefs
       <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
         <path

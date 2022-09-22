@@ -67,3 +67,8 @@ a {
 .splide__arrow svg {
 	fill: #FFF;
 }
+
+.splide__slide img {
+	width: 100%;
+	height: auto;
+}

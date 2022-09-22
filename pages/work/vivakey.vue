@@ -1,6 +1,6 @@
 <template>
   <div class="vivakey-wrapper" :style="{ color: fontColor }">
-    <a href="" target="_blank"
+    <a href="https://vivakey.com.br/" target="_blank"
       >Vivakey
       <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
         <path
@@ -43,8 +43,19 @@
           <strong>Check it out</strong>
           <br />
           <strong>
-            <a href="" target="_blank">Apple Store</a> |
-            <a href="" target="_blank">Play Store</a>
+            <a
+              href="https://apps.apple.com/br/app/vivakey/id1461678729"
+              target="_blank"
+            >
+              Apple Store
+            </a>
+            |
+            <a
+              href="https://play.google.com/store/apps/details?id=vivakey.vivakey.com.vivakey&hl=en&gl=US"
+              target="_blank"
+            >
+              Play Store
+            </a>
           </strong>
         </p>
       </article>
@@ -64,19 +75,19 @@
         @splide:active="showSubtitle"
       >
         <splide-slide>
-          <img src="~/assets/images/image01.jpg" />
-          <p v-if="carouselIndex == 0">Legenda 1</p>
+          <img src="~/assets/images/vivakey-img0.png" />
         </splide-slide>
         <splide-slide>
-          <img
-            height="90%"
-            src="https://media.giphy.com/media/PSKAppO2LH56w/giphy.gif"
-          />
-          <p v-if="carouselIndex == 1">Legenda 2</p>
+          <img src="~/assets/images/vivakey-img1.png" />
         </splide-slide>
         <splide-slide>
-          <img src="~/assets/images/image03.jpg" />
-          <p v-if="carouselIndex == 2">Legenda 3</p>
+          <img src="~/assets/images/vivakey-img2.png" />
+        </splide-slide>
+        <splide-slide>
+          <img src="~/assets/images/vivakey-img3.png" />
+        </splide-slide>
+        <splide-slide>
+          <img src="~/assets/images/vivakey-img4.png" />
         </splide-slide>
       </splide>
     </div>
@@ -96,10 +107,11 @@ export default Vue.extend({
           right: '5rem',
           left: '5rem',
         },
+        drag: 'free',
+        snap: 'true',
         gap: '1rem',
-        height: '550px',
+        height: '142%',
         width: '90%',
-        autoWidth: true,
         focus: 'center',
         classes: {
           arrow: 'splide__arrow carousel-arrows',
