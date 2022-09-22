@@ -2,11 +2,11 @@ export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
   router: {
-    base: '/ahmed-kleit/',
+    base: '/ahmed-kleit-site-2022/',
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ahmed-kleit',
+    title: 'ahmed-kleit-site-2022',
     htmlAttrs: {
       lang: 'en',
     },
