@@ -1,5 +1,5 @@
 <template>
-  <div class="psa-wrapper" :style="{ color: fontColor }">
+  <div class="vivakey-wrapper" :style="{ color: fontColor }">
     <a href="" target="_blank"
       >Vivakey
       <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
@@ -9,25 +9,43 @@
         />
       </svg>
     </a>
-    <div class="psa-container">
+    <div class="vivakey-container">
       <article>
         <h2>
-          Groupe PSA, was a French multinational automotive manufacturing
-          company.
+          Vivakey is a complete solution for digital hotels with all the
+          necessary tools for the operation and management of an autonomous
+          hotel.
         </h2>
         <h2>UX / UI Designer</h2>
 
-        <p>April 2014 | Dez 2014</p>
+        <p>November 2018</p>
 
         <p>
-          Working at PSA Vélizy-Villacoublay as a UX/UI designer for the all car
-          generation: Peugeot, Citroën and DS.
+          I had the pleasure to receive an invitation from Felipe Pirotta (CTO),
+          to develop the entire user experience within a mobile app.
         </p>
 
         <p>
-          Designing interfaces for the onboarding computers (HMI). Touch screen
-          interface creation focused on the user experience improvement. Study
-          and analysis of market trends and competitors.
+          It was a great challenge to bring the entire experience of a guest at
+          the hotel, using only their mobile.
+        </p>
+
+        <p>
+          It was essential to support the user from their first access to the
+          platform. Seeking a unique and liberating experience.
+          <strong
+            >From unlocking the parking to self check-out, 100%
+            autonomous.</strong
+          >
+        </p>
+
+        <p>
+          <strong>Check it out</strong>
+          <br />
+          <strong>
+            <a href="" target="_blank">Apple Store</a> |
+            <a href="" target="_blank">Play Store</a>
+          </strong>
         </p>
       </article>
 
@@ -97,7 +115,7 @@ export default Vue.extend({
   },
 
   created() {
-    this.changeColor('#163651', '#84CCE5', '#FFFFFF')
+    this.changeColor('#9BCFE2', '#163651', '#FFFFFF')
   },
 
   methods: {
@@ -122,11 +140,11 @@ export default Vue.extend({
 
 <style>
 @media (max-width: 720px) {
-  .psa-container {
+  .vivakey-container {
     padding: 0 10px;
   }
 
-  .psa-wrapper {
+  .vivakey-wrapper {
     display: grid;
     grid-template-areas:
       'title'
@@ -137,7 +155,7 @@ export default Vue.extend({
 }
 
 @media (min-width: 720px) {
-  .psa-wrapper {
+  .vivakey-wrapper {
     display: grid;
     grid-template-columns: 1fr fit-content(50%);
     grid-template-rows: 1fr auto;
@@ -148,75 +166,59 @@ export default Vue.extend({
   }
 }
 
-.psa-container {
+.vivakey-container {
   display: flex;
   flex-direction: column;
 }
 
-.psa-wrapper > a {
+.vivakey-wrapper > a {
   width: fit-content;
   font-size: 5rem;
   font-weight: bold;
   grid-area: title;
 }
 
-.psa-container > article {
+.vivakey-container > article {
   grid-area: article;
 }
 
-.psa-container > article > h2 {
+.vivakey-container > article > h2 {
   font-size: 2.188rem;
   font-weight: bold;
   margin-bottom: 1.25rem;
 }
 
-.psa-container > article > h2:nth-child(1) {
+.vivakey-container > article > h2:nth-child(1) {
   margin-top: 1.25rem;
 }
 
-.psa-container > article > h2:nth-child(2) {
+.vivakey-container > article > h2:nth-child(2) {
   font-weight: normal;
   margin-top: 1.875rem;
 }
 
-.psa-container > article > h3 {
+.vivakey-container > article > h3 {
   font-size: 1.563rem;
   font-weight: bold;
   margin-top: 2.5rem;
 }
 
-.psa-container p {
+.vivakey-container p {
   font-size: 1.563rem;
   font-weight: normal;
   margin: 15px 0;
 }
 
-.psa-container p:nth-child(4) {
+.vivakey-container p:nth-child(4) {
   margin-top: 40px;
 }
 
-.psa-container > article > section {
-  display: flex;
-  flex-direction: column;
-  border: 2px solid #b24181;
-  border-radius: 5px;
-  min-height: auto;
-  text-align: center;
-  padding: 1.375rem 0;
-  width: 100%;
-}
-
-.psa-container > article > section > p {
-  font-weight: bold;
-}
-
-.psa-container > article > section > a {
+.vivakey-container p:last-child > strong:first-child {
   font-size: 1.125rem;
-  text-decoration: underline;
 }
 
-.heart-icon {
-  vertical-align: bottom;
+.vivakey-container p > strong > a {
+  border-bottom: 1px solid #163651;
 }
 
 .carousel {
@@ -228,6 +230,7 @@ export default Vue.extend({
   grid-area: media;
   overflow: hidden;
   text-align: -webkit-center;
+  text-align: -moz-center;
   max-width: 100%;
 }
 
