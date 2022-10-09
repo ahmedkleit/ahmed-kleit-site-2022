@@ -58,6 +58,7 @@ export default Vue.extend({
   font-size: 2.1875rem;
   font-weight: 700;
   text-align: center;
+  margin: 0 15px;
 }
 
 .button-group {
