@@ -184,6 +184,7 @@ nav {
   main {
     grid-area: main;
     overflow: auto;
+    margin-bottom: 7rem;
   }
 
   nav {
@@ -192,7 +193,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: static;
+    position: fixed;
     margin: 0 auto;
     bottom: 0;
     left: 0;
