@@ -43,12 +43,12 @@
         </ul>
 
         <div>
-          <Chip>Strategy</Chip>
-          <Chip>Go-To-Market</Chip>
-          <Chip>Management</Chip>
-          <Chip>Comunication</Chip>
-          <Chip>UX Design</Chip>
-          <Chip>UI Design</Chip>
+          <Chip :chip-color="'255, 255, 255'">Strategy</Chip>
+          <Chip :chip-color="'255, 255, 255'">Go-To-Market</Chip>
+          <Chip :chip-color="'255, 255, 255'">Management</Chip>
+          <Chip :chip-color="'255, 255, 255'">Comunication</Chip>
+          <Chip :chip-color="'255, 255, 255'">UX Design</Chip>
+          <Chip :chip-color="'255, 255, 255'">UI Design</Chip>
         </div>
       </article>
 

@@ -72,3 +72,7 @@ a {
 	width: 100%;
 	height: auto;
 }
+
+.carousel-pagination {
+	bottom: -2rem !important;
+}

@@ -30,7 +30,7 @@
       tag="a"
       :style="{ color: buttonColor }"
       @mouseover.native="changeColor('#560332', '#FFFFFF', '#FFFFFF')"
-      >101 Chefs /Baobba</NuxtLink
+      >101 Chefs — Baobba</NuxtLink
     >
     <NuxtLink
       to="/work/vivakey"
@@ -46,9 +46,6 @@
       @mouseover.native="changeColor('#1E2337', '#FD4239', '#FFFFFF')"
       >PSA</NuxtLink
     >
-    <!-- <NuxtLink to="/work/archives" tag="a" :style="{ color: fontColor }"
-      >Archives</NuxtLink
-    > -->
   </div>
 </template>
 

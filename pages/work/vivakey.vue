@@ -61,10 +61,11 @@
       </article>
 
       <div class="chips-container">
-        <Chip>Automotive</Chip>
-        <Chip>UX Design</Chip>
-        <Chip>UI Design</Chip>
-        <Chip>Human Machine Interaction</Chip>
+        <Chip :chip-color="'255, 255, 255'">Automotive</Chip>
+        <Chip :chip-color="'255, 255, 255'">UX Design</Chip>
+        <Chip :chip-color="'255, 255, 255'">iOT</Chip>
+        <Chip :chip-color="'255, 255, 255'">Mobile App</Chip>
+        <Chip :chip-color="'255, 255, 255'">Open business</Chip>
       </div>
     </div>
 
@@ -110,13 +111,15 @@ export default Vue.extend({
         drag: 'free',
         snap: 'true',
         gap: '1rem',
-        height: '142%',
+        heightRatio: '1.775',
         width: '90%',
         focus: 'center',
         classes: {
           arrow: 'splide__arrow carousel-arrows',
           prev: 'splide__arrow--prev carousel-previous-arrow',
           next: 'splide__arrow--next carousel-next-arrow',
+          pagination: 'splide__pagination carousel-pagination',
+          page: 'splide__pagination__page your-class-page',
         },
       },
     }
@@ -244,6 +247,7 @@ export default Vue.extend({
   text-align: -webkit-center;
   text-align: -moz-center;
   max-width: 100%;
+  padding-bottom: 2rem;
 }
 
 .chips-container {

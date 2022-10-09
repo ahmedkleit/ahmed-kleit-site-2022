@@ -41,10 +41,10 @@
       </ul>
 
       <div>
-        <Chip>Entrepreneurship</Chip>
-        <Chip>Strategy</Chip>
-        <Chip>Go-To-Market</Chip>
-        <Chip>Process management</Chip>
+        <Chip :chip-color="'255, 255, 255'">Entrepreneurship</Chip>
+        <Chip :chip-color="'255, 255, 255'">Strategy</Chip>
+        <Chip :chip-color="'255, 255, 255'">Go-To-Market</Chip>
+        <Chip :chip-color="'255, 255, 255'">Process management</Chip>
       </div>
     </div>
   </div>

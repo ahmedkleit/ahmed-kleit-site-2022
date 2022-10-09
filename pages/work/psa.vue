@@ -32,10 +32,10 @@
       </article>
 
       <div class="chips-container">
-        <Chip>Automotive</Chip>
-        <Chip>UX Design</Chip>
-        <Chip>UI Design</Chip>
-        <Chip>Human Machine Interaction</Chip>
+        <Chip :chip-color="'255, 255, 255'">Automotive</Chip>
+        <Chip :chip-color="'255, 255, 255'">UX Design</Chip>
+        <Chip :chip-color="'255, 255, 255'">UI Design</Chip>
+        <Chip :chip-color="'255, 255, 255'">Human Machine Interaction</Chip>
       </div>
     </div>
 
@@ -48,6 +48,21 @@
             @splide:active="showSubtitle"
           >
             <splide-slide>
+              <video
+                width="100%"
+                height="auto"
+                autoplay="autoplay"
+                controls
+                loop
+              >
+                <source
+                  src="~/assets/videos/PROPS_AHMED_3.mp4"
+                  type="video/mp4"
+                />
+                Your browser does not support the video tag.
+              </video>
+            </splide-slide>
+            <splide-slide>
               <img src="~/assets/images/01MEDIA PLAY.png" />
             </splide-slide>
             <splide-slide>
@@ -58,15 +73,6 @@
             </splide-slide>
             <splide-slide>
               <img src="~/assets/images/04CLIM.png" />
-            </splide-slide>
-            <splide-slide>
-              <video width="100%" height="100%" controls>
-                <source
-                  src="~/assets/videos/PROPS_AHMED_3.mp4"
-                  type="video/mp4"
-                />
-                Your browser does not support the video tag.
-              </video>
             </splide-slide>
           </splide>
         </Tab>
@@ -101,6 +107,7 @@ export default Vue.extend({
           arrow: 'splide__arrow carousel-arrows',
           prev: 'splide__arrow--prev carousel-previous-arrow',
           next: 'splide__arrow--next carousel-next-arrow',
+          pagination: 'splide__pagination carousel-pagination',
         },
       },
     }
@@ -147,6 +154,10 @@ export default Vue.extend({
       'article'
       'media';
     gap: 1rem;
+  }
+
+  .wrapper-carousel {
+    padding-bottom: 2rem;
   }
 }
 

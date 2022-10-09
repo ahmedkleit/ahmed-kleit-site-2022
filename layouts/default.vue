@@ -192,7 +192,7 @@ nav {
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    position: fixed;
+    position: sticky;
     margin: 0 auto;
     bottom: 0;
     left: 0;

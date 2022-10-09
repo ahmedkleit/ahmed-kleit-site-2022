@@ -62,11 +62,21 @@
     </div>
 
     <div class="chips-container">
-      <Chip>Entrepreneurship</Chip>
-      <Chip>Strategy</Chip>
-      <Chip>Go-To-Market</Chip>
-      <Chip>Process management</Chip>
-      <Chip>Open business</Chip>
+      <Chip :chip-color="'255, 255, 255'" :chip-font-color="'#FE9F6A'"
+        >Entrepreneurship</Chip
+      >
+      <Chip :chip-color="'255, 255, 255'" :chip-font-color="'#FE9F6A'"
+        >Strategy</Chip
+      >
+      <Chip :chip-color="'255, 255, 255'" :chip-font-color="'#FE9F6A'"
+        >Go-To-Market</Chip
+      >
+      <Chip :chip-color="'255, 255, 255'" :chip-font-color="'#FE9F6A'"
+        >Process management</Chip
+      >
+      <Chip :chip-color="'255, 255, 255'" :chip-font-color="'#FE9F6A'"
+        >Open business</Chip
+      >
     </div>
   </div>
 </template>
