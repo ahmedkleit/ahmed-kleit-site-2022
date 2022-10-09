@@ -111,8 +111,9 @@ export default Vue.extend({
         drag: 'free',
         snap: 'true',
         gap: '1rem',
-        heightRatio: '1.775',
+        height: '45.5rem',
         width: '90%',
+        autoWidth: true,
         focus: 'center',
         classes: {
           arrow: 'splide__arrow carousel-arrows',
@@ -256,5 +257,10 @@ export default Vue.extend({
   margin-top: 3.125rem;
   flex-flow: wrap;
   grid-area: chips;
+}
+
+img {
+  height: inherit !important;
+  /* object-fit: contain; */
 }
 </style>
