@@ -546,14 +546,14 @@ li {
       'saas-title saas-title'
       'saas-subtitle saas-subtitle'
       'saas saas'
-      'intelligence-title .'
-      'intelligence-subtitle .'
+      'intelligence-title intelligence-title'
+      'intelligence-subtitle intelligence-subtitle'
       'intelligence .'
       'enterprise-title enterprise-title'
       'enterprise-subtitle enterprise-subtitle'
       'enterprise enterprise'
-      'rd-title .'
-      'rd-subtitle .'
+      'rd-title rd-title'
+      'rd-subtitle rd-subtitle'
       'rd .';
   }
 

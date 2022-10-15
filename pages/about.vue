@@ -157,6 +157,10 @@ export default Vue.extend({
     padding: 0 10px;
   }
 
+  .about-container h2 {
+    font-size: 1.563rem !important;
+  }
+
   .experience-and-education {
     display: grid;
     grid-template-rows: auto 1fr;
@@ -205,7 +209,7 @@ export default Vue.extend({
 }
 
 .about-container h2 {
-  font-size: 3.125rem;
+  font-size: 1.563rem;
   font-weight: bold;
   margin-top: 2.5rem;
 }
