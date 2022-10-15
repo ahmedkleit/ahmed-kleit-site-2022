@@ -9,7 +9,7 @@
     <div class="container">
       <header>
         <a
-          href="/Resume Ahmed Kleit 2022.pdf"
+          :href="`${$router.options.base}Resume Ahmed Kleit 2022.pdf`"
           target="_blank"
           :style="{
             color: buttonColor,
