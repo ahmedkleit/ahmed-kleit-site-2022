@@ -76,19 +76,19 @@
         @splide:active="showSubtitle"
       >
         <splide-slide>
-          <img src="~/assets/images/vivakey-img0.png" />
+          <img class="vivakey-img" src="~/assets/images/vivakey-img0.png" />
         </splide-slide>
         <splide-slide>
-          <img src="~/assets/images/vivakey-img1.png" />
+          <img class="vivakey-img" src="~/assets/images/vivakey-img1.png" />
         </splide-slide>
         <splide-slide>
-          <img src="~/assets/images/vivakey-img2.png" />
+          <img class="vivakey-img" src="~/assets/images/vivakey-img2.png" />
         </splide-slide>
         <splide-slide>
-          <img src="~/assets/images/vivakey-img3.png" />
+          <img class="vivakey-img" src="~/assets/images/vivakey-img3.png" />
         </splide-slide>
         <splide-slide>
-          <img src="~/assets/images/vivakey-img4.png" />
+          <img class="vivakey-img" src="~/assets/images/vivakey-img4.png" />
         </splide-slide>
       </splide>
     </div>
@@ -259,7 +259,7 @@ export default Vue.extend({
   grid-area: chips;
 }
 
-img {
+.vivakey-img {
   height: inherit !important;
   /* object-fit: contain; */
 }
