@@ -1,13 +1,14 @@
 <template>
   <div class="chefs-wrapper" :style="{ color: fontColor }">
-    <a href="http://www.101chefs.com.br/" target="_blank"
-      >101 Chefs
+    <a href="http://www.101chefs.com.br/" target="_blank">
+      101 Chefs
       <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
         <path
           fill="currentColor"
           d="M14,3V5H17.59L7.76,14.83L9.17,16.24L19,6.41V10H21V3M19,19H5V5H12V3H5C3.89,3 3,3.9 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V12H19V19Z"
-        /></svg
-    ></a>
+        />
+      </svg>
+    </a>
     <div class="chefs-container">
       <article>
         <h2>
@@ -36,7 +37,10 @@
             the most amazing work experience.
           </p>
 
-          <a href="">
+          <a
+            href="https://medium.com/gustavo-tanaka-english/what-is-the-open-business-movement-a39abc6e47d2"
+            target="_blank"
+          >
             <svg
               class="heart-icon"
               style="width: 1.438rem; height: 1.25rem"
@@ -55,8 +59,19 @@
 
     <div class="video">
       <iframe
-        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+        src="https://www.youtube.com/embed/vM100ivbpGI"
         title="YouTube video player"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+
+      <iframe
+        width="560"
+        height="315"
+        src="https://www.youtube.com/embed/vM100ivbpGI"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
     </div>
