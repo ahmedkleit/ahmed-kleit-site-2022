@@ -34,7 +34,7 @@
         >
       </section>
 
-      <img src="~/assets/images/ahmed.png" alt="" />
+      <img src="~/assets/images/ahmed.jpg" alt="" />
 
       <section class="experience-and-education">
         <section>
