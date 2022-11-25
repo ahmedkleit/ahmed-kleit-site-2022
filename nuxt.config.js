@@ -6,7 +6,7 @@ export default {
   },
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'ahmed-kleit-site-2022',
+    title: 'Ahmed Kleit',
     htmlAttrs: {
       lang: 'en',
     },
@@ -16,6 +16,7 @@ export default {
       { hid: 'description', name: 'description', content: '' },
     ],
     link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
       {
         rel: 'stylesheet',
