@@ -55,6 +55,12 @@
 import Vue from 'vue'
 import { mapState, mapMutations } from 'vuex'
 export default Vue.extend({
+  head() {
+    return {
+      title: 'Ahmed Kleit - BMK Partners',
+    }
+  },
+
   computed: {
     ...mapState(['color', 'fontColor']),
   },

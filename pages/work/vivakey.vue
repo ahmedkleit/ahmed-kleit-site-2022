@@ -126,6 +126,12 @@ export default Vue.extend({
     }
   },
 
+  head() {
+    return {
+      title: 'Ahmed Kleit - Vivakey',
+    }
+  },
+
   computed: {
     ...mapState(['color', 'fontColor']),
   },

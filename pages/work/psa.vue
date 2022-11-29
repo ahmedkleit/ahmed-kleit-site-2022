@@ -112,6 +112,11 @@ export default Vue.extend({
       },
     }
   },
+  head() {
+    return {
+      title: 'Ahmed Kleit - PSA',
+    }
+  },
 
   computed: {
     ...mapState(['color', 'fontColor']),

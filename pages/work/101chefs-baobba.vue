@@ -100,6 +100,12 @@
 import Vue from 'vue'
 import { mapState, mapMutations } from 'vuex'
 export default Vue.extend({
+  head() {
+    return {
+      title: 'Ahmed Kleit - 101 Chefs',
+    }
+  },
+
   computed: {
     ...mapState(['color', 'fontColor']),
   },
