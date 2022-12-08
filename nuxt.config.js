@@ -42,7 +42,11 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/gtm'],
+
+  gtm: {
+    id: 'GTM-KWPN95X',
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
