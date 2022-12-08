@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/work/psa", {data:[{}],fetch:{},mutations:[["setColor","#1E2337"],["setFontColor","#FD4239"],["setButtonColor","#FFFFFF"]]});

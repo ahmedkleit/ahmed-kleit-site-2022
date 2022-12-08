@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/work/bmk-partners", {data:[{}],fetch:{},mutations:[["setColor","#033756"],["setFontColor","#FE9F6A"],["setButtonColor","#FFFFFF"]]});

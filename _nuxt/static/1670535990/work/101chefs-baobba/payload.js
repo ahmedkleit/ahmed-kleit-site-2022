@@ -1,0 +1,1 @@
+__NUXT_JSONP__("/work/101chefs-baobba", {data:[{}],fetch:{},mutations:[["setColor","#560332"],["setFontColor","#FAD7D7"],["setButtonColor","#FFFFFF"]]});
