@@ -1,0 +1,107 @@
+name: Publish production
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: production
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/master'
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: '16.17.0'
+      - run: npm install --global yarn@1.22.19
+      - run: yarn install --frozen-lockfile --non-interactive
+        env:
+          HUSKY_SKIP_INSTALL: '1'
+      - name: Validate and generate production
+        env:
+          NUXT_ROUTER_BASE: /
+        run: |
+          ./node_modules/.bin/eslint --ext '.js,.vue' --ignore-path .gitignore .
+          ./node_modules/.bin/eslint --no-ignore pages/work/vivakey.vue
+          yarn generate
+          test "$(cat dist/CNAME)" = ahmedkleit.com
+          grep -q 'https://www.instagram.com/vivakeyoficial/?hl=en' dist/work/vivakey/index.html
+          if grep -q '/site-preview/' dist/index.html; then exit 1; fi
+      - uses: actions/checkout@v5
+        with:
+          ref: gh-pages
+          path: .pages-publish
+      - name: Update published files
+        run: |
+          rsync -a --delete --exclude=.git dist/ .pages-publish/
+          cd .pages-publish
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish approved production ${GITHUB_SHA}"
+            git push origin HEAD:gh-pages
+          fi
+      - name: Request Pages build
+        id: pages_build
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api --method POST "repos/${GITHUB_REPOSITORY}/pages/builds" > "$RUNNER_TEMP/pages-build.json" 2> "$RUNNER_TEMP/pages-build-error.txt"
+      - name: Verify the public production page
+        run: |
+          python3 - <<'PY'
+          import time, urllib.request
+          url = 'https://ahmedkleit.com/work/vivakey/'
+          for attempt in range(30):
+              try:
+                  request = urllib.request.Request(url + '?deployment=${{ github.sha }}', headers={'Cache-Control': 'no-cache'})
+                  with urllib.request.urlopen(request, timeout=20) as response:
+                      html = response.read().decode()
+                      if response.status == 200 and 'https://www.instagram.com/vivakeyoficial/?hl=en' in html and '/site-preview/' not in html:
+                          print('Verified production: HTTP 200 and approved Vivakey link.')
+                          break
+              except Exception as error:
+                  print(type(error).__name__, str(error))
+              time.sleep(10)
+          else:
+              raise SystemExit('Production did not serve the approved link within the verification window.')
+          PY
+      - name: Record deployment result for read-only Git checks
+        if: always()
+        env:
+          DEPLOYMENT_RESULT: ${{ job.status }}
+          PAGES_BUILD_RESULT: ${{ steps.pages_build.outcome }}
+        run: |
+          python3 - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+          from pathlib import Path
+          result = dict(status=os.environ['DEPLOYMENT_RESULT'], source_commit=os.environ['GITHUB_SHA'], checked_at=datetime.now(timezone.utc).isoformat(), run_url=f"https://github.com/{os.environ['GITHUB_REPOSITORY']}/actions/runs/{os.environ['GITHUB_RUN_ID']}")
+          result['pages_build_status'] = os.environ['PAGES_BUILD_RESULT']
+          error_file = Path(os.environ['RUNNER_TEMP'], 'pages-build-error.txt')
+          if error_file.exists():
+              result['pages_build_error'] = error_file.read_text()[:2000]
+          Path(os.environ['RUNNER_TEMP'], 'production-status.json').write_text(json.dumps(result, indent=2) + '\n')
+          PY
+          if [ -n "$(git ls-remote origin refs/heads/deployment-status)" ]; then
+            git fetch origin deployment-status
+            git switch --force-create deployment-status FETCH_HEAD
+          else
+            git switch -c deployment-status
+          fi
+          mkdir -p .github
+          cp "$RUNNER_TEMP/production-status.json" .github/production-status.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add .github/production-status.json
+          git commit -m "Record production deployment result"
+          git push origin HEAD:deployment-status
