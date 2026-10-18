@@ -1,6 +1,6 @@
 <template>
   <div class="vivakey-wrapper" :style="{ color: fontColor }">
-    <a href="https://vivakey.com.br/" target="_blank"
+    <a href="https://www.instagram.com/vivakeyoficial/?hl=en" target="_blank"
       >Vivakey
       <svg style="width: 24px; height: 24px" viewBox="0 0 24 24">
         <path

@@ -1,0 +1,42 @@
+name: Publish preview
+
+on:
+  push:
+    branches: [preview]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: site-preview
+  cancel-in-progress: true
+
+jobs:
+  publish:
+    if: github.ref == 'refs/heads/preview'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '16.17.0'
+      - name: Install Yarn
+        run: npm install --global yarn@1.22.19
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile --non-interactive
+        env:
+          HUSKY_SKIP_INSTALL: '1'
+      - name: Generate preview
+        run: yarn generate
+        env:
+          NUXT_ROUTER_BASE: /site-preview/
+      - name: Keep the preview on its own domain
+        run: rm -f dist/CNAME
+      - name: Publish to the preview repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          personal_token: ${{ secrets.PREVIEW_DEPLOY_TOKEN }}
+          external_repository: ahmedkleit/site-preview
+          publish_branch: gh-pages
+          publish_dir: ./dist
